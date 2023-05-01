@@ -9,7 +9,6 @@ public class FindParent {
 
     private Cow sourceCow;
     ArrayList<String[]> allCow;
-    int i = 0;
 
     public FindParent(String cowCode){
         allCow = new ReadCSVFile("4cow").getData();
@@ -25,7 +24,6 @@ public class FindParent {
 
         if (sourceCow != null){
             findingParent(sourceCow);
-            System.out.println(i);
             printParent(sourceCow);
         }
     }
@@ -57,7 +55,6 @@ public class FindParent {
                     break;
                 }
             }
-            i++;
         }
     }
 
