@@ -4,6 +4,11 @@ import models.Breed;
 import models.Cow;
 import util.ReadCSVFile;
 
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTree;
+import javax.swing.tree.DefaultMutableTreeNode;
+import java.awt.Font;
 import java.util.ArrayList;
 
 public class FindParent {
@@ -15,7 +20,10 @@ public class FindParent {
 
     ArrayList<Cow> allCowParent;
 
-    public FindParent(String cowCode){
+    private JFrame frame;
+
+    public FindParent(String cowCode, JFrame frame){
+        this.frame = frame;
         allCow = new ReadCSVFile("4cow").getData();
         allMomBreed = new ReadCSVFile("5breed").getData();
         allDadBreed = new ReadCSVFile("7tpfdata").getData();
@@ -31,13 +39,41 @@ public class FindParent {
         }
 
         if (sourceCow != null){
+            DefaultMutableTreeNode root = new DefaultMutableTreeNode(sourceCow.getCowCode());
             findingParent(sourceCow);
-            printParent(sourceCow);
+//            printParent(sourceCow);
+
+            DefaultMutableTreeNode prevNode = null;
+            for (Cow cow : allCowParent){
+                if (cow.getMom() != null && cow.getDad() != null){
+                    DefaultMutableTreeNode node = new DefaultMutableTreeNode(cow.getCowCode());
+                    DefaultMutableTreeNode momNode = new DefaultMutableTreeNode(cow.getMomCode());
+                    DefaultMutableTreeNode dadNode = new DefaultMutableTreeNode(cow.getDadCode());
+
+                    if (prevNode != null){
+                        if (cow.getMomCode().equals(prevNode.getUserObject().toString())){
+                            node.add(prevNode);
+                            node.add(dadNode);
+                        }
+                        else{
+                            node.add(prevNode);
+                            node.add(momNode);
+                        }
+                    }
+                    else{
+                        node.add(momNode);
+                        node.add(dadNode);
+                    }
+                    prevNode = node;
+                }
+            }
+            if (prevNode != null){
+                JTree tree = new JTree(prevNode);
+                tree.setFont(new Font("",Font.PLAIN,25));
+                frame.add(new JScrollPane(tree));
+            }
         }
 
-//        for (Cow cow : allCowParent){
-//            System.out.println(cow);
-//        }
     }
 
     private void findingParent(Cow cow){
@@ -97,11 +133,11 @@ public class FindParent {
     }
 
     private void printParent(Cow cow){
-        System.out.println(cow);
         if (cow.getMom() == null || cow.getDad() == null){
             return;
         }
         printParent(cow.getMom());
+        System.out.println(cow);
         printParent(cow.getDad());
     }
 }
