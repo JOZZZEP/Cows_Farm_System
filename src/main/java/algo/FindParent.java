@@ -47,15 +47,17 @@ public class FindParent {
             for (Cow cow : allCowParent){
                 if (cow.getMom() != null && cow.getDad() != null){
                     DefaultMutableTreeNode node = new DefaultMutableTreeNode(cow.getCowCode());
-                    DefaultMutableTreeNode momNode = new DefaultMutableTreeNode(cow.getMomCode());
-                    DefaultMutableTreeNode dadNode = new DefaultMutableTreeNode(cow.getDadCode());
+                    DefaultMutableTreeNode momNode = new DefaultMutableTreeNode(cow.getMomCode()+" (MOM)");
+                    DefaultMutableTreeNode dadNode = new DefaultMutableTreeNode(cow.getDadCode()+" (DAD)");
 
                     if (prevNode != null){
                         if (cow.getMomCode().equals(prevNode.getUserObject().toString())){
+                            prevNode.setUserObject(cow.getMomCode()+" (MOM)");
                             node.add(prevNode);
                             node.add(dadNode);
                         }
                         else{
+                            prevNode.setUserObject(cow.getDadCode()+" (DAD)");
                             node.add(prevNode);
                             node.add(momNode);
                         }
