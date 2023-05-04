@@ -11,7 +11,7 @@ public class Main {
 
         JFrame frame = new JFrame();
         frame.setTitle("Cow Simulator");
-        new FindParent("TC590004", frame);
+        new FindParent("143014ND00487", frame);
 //
 //        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //        frame.setPreferredSize(new Dimension(1366, 768));
