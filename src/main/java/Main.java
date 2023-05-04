@@ -13,12 +13,12 @@ public class Main {
         frame.setTitle("Cow Simulator");
         new FindParent("TC590004", frame);
 //
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setPreferredSize(new Dimension(1366, 768));
-        frame.setMinimumSize(frame.getPreferredSize());
-        frame.pack();
-        frame.setExtendedState(Frame.MAXIMIZED_BOTH);
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
+//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        frame.setPreferredSize(new Dimension(1366, 768));
+//        frame.setMinimumSize(frame.getPreferredSize());
+//        frame.pack();
+//        frame.setExtendedState(Frame.MAXIMIZED_BOTH);
+//        frame.setLocationRelativeTo(null);
+//        frame.setVisible(true);
     }
 }
