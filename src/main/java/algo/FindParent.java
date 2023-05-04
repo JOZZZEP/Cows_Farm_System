@@ -3,10 +3,13 @@ package algo;
 import models.Breed;
 import models.Cow;
 import util.ReadCSVFile;
+import util.TreeCustom;
 
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.JTree;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.tree.DefaultMutableTreeNode;
 import java.awt.Font;
 import java.util.ArrayList;
@@ -20,7 +23,8 @@ public class FindParent {
 
     ArrayList<Cow> allCowParent;
 
-    private JFrame frame;
+    ArrayList<Object[]> data;
+    private final JFrame frame;
 
     public FindParent(String cowCode, JFrame frame){
         this.frame = frame;
@@ -28,6 +32,7 @@ public class FindParent {
         allMomBreed = new ReadCSVFile("5breed").getData();
         allDadBreed = new ReadCSVFile("7tpfdata").getData();
         allCowParent = new ArrayList<>();
+        data = new ArrayList<>();
         finding(cowCode);
     }
 
@@ -39,9 +44,8 @@ public class FindParent {
         }
 
         if (sourceCow != null){
-            DefaultMutableTreeNode root = new DefaultMutableTreeNode(sourceCow.getCowCode());
             findingParent(sourceCow);
-//            printParent(sourceCow);
+
 
             DefaultMutableTreeNode prevNode = null;
             for (Cow cow : allCowParent){
@@ -58,8 +62,8 @@ public class FindParent {
                         }
                         else{
                             prevNode.setUserObject(cow.getDadCode()+" (DAD)");
-                            node.add(prevNode);
                             node.add(momNode);
+                            node.add(prevNode);
                         }
                     }
                     else{
@@ -72,14 +76,25 @@ public class FindParent {
             if (prevNode != null){
                 JTree tree = new JTree(prevNode);
                 tree.setFont(new Font("",Font.PLAIN,25));
-                frame.add(new JScrollPane(tree));
+                tree.setCellRenderer(new TreeCustom());
+//                frame.add(new JScrollPane(tree));
             }
         }
+        printParent(sourceCow);
+        String[] columnNames = {"Cow", "Mom", "Dad"};
+        DefaultTableModel tableModel = new DefaultTableModel(data.toArray(new Object[0][0]), columnNames);
+
+        JTable table = new JTable(tableModel);
+        table.setFont(new Font("",Font.PLAIN,25));
+        table.setRowHeight(30);
+        JScrollPane scrollPane = new JScrollPane(table);
+
+        frame.getContentPane().add(scrollPane);
+
 
     }
 
     private void findingParent(Cow cow){
-
         if (cow.getMomCode().isEmpty() || cow.getCowCode().equals(cow.getMomCode())){
             findingMomBreed(cow);
             allCowParent.add(cow);
@@ -92,6 +107,7 @@ public class FindParent {
 //            System.out.println(cow);
             return;
         }
+
         for (String[] cowParent : allCow){
             if (cowParent[2].equals(cow.getMomCode()) || cowParent[2].equals(cow.getDadCode())){
 
@@ -135,11 +151,12 @@ public class FindParent {
     }
 
     private void printParent(Cow cow){
+        System.out.println(cow);
+        data.add(new Object[]{cow.getCowCode(),cow.getMomCode(),cow.getDadCode()});
         if (cow.getMom() == null || cow.getDad() == null){
             return;
         }
         printParent(cow.getMom());
-        System.out.println(cow);
         printParent(cow.getDad());
     }
 }

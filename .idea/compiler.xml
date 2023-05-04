@@ -10,7 +10,6 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Cows_Farm_System" target="17" />
       <module name="CowSimulator" target="17" />
     </bytecodeTargetLevel>
   </component>
