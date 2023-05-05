@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Arrays;
+import java.util.ArrayList;
 
 public class RunDB {
 
@@ -15,11 +15,12 @@ public class RunDB {
 
     }
 
-    public void getData(String table, String value){
+    public ArrayList<String[]> getData(String table){
+        ArrayList<String[]> dataList = new ArrayList<>();
         try {
             openDatabaseConnection();
             try(PreparedStatement statement = connection.prepareStatement(
-                    "SELECT * FROM " + table +" "+ value)){
+                    "SELECT * FROM " + table)){
                 ResultSet resultSet = statement.executeQuery();
                 int column = statement.getMetaData().getColumnCount();
                 while (resultSet.next()){
@@ -27,13 +28,14 @@ public class RunDB {
                     for (int i=1;i <= column;i++){
                         data[i-1] = resultSet.getString(i);
                     }
-                    System.out.println(Arrays.toString(data));
+                    dataList.add(data);
                 }
             };
             closeDatabaseConnection();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        return dataList;
     }
 
     private void openDatabaseConnection() throws SQLException {
