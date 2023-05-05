@@ -2,6 +2,7 @@ package algo;
 
 import models.Breed;
 import models.Cow;
+import util.CustomTreeCellRenderer;
 import util.ReadCSVFile;
 import util.RunDB;
 import util.TreeCustom;
@@ -19,25 +20,30 @@ import java.util.Arrays;
 public class FindParent {
 
     private Cow sourceCow;
-    ArrayList<String[]> allCow;
-    ArrayList<String[]> allMomBreed;
-    ArrayList<String[]> allDadBreed;
+    private final ArrayList<String[]> allCow;
+    private final ArrayList<String[]> allCorrectBreeds;
+    private final ArrayList<String[]> allErrorBreeds;
+    private final ArrayList<String[]> cowParent;
+    private ArrayList<String[]> allMomBreed;
+    private ArrayList<String[]> allDadBreed;
 
-    ArrayList<Cow> allCowParent;
+    private ArrayList<Cow> allCowParent;
 
-    ArrayList<Object[]> data;
-    RunDB runDB;
-    private final JFrame frame;
+    private ArrayList<Object[]> data;
+    private RunDB runDB;
 
-    public FindParent(String cowCode, JFrame frame){
-        this.frame = frame;
+    public FindParent(String cowCode){
         this.runDB = new RunDB();
-        allCow = runDB.getData("cow");
-        allMomBreed = new ReadCSVFile("5breed").getData();
-        allDadBreed = new ReadCSVFile("7tpfdata").getData();
+        allCow = runDB.getAllCows();
+        allCorrectBreeds = runDB.getAllCorrectBreed();
+        allErrorBreeds = runDB.getAllErrorBreed();
+        cowParent = runDB.getCowParent("TC590004");
+
+//        allMomBreed = new ReadCSVFile("5breed").getData();
+//        allDadBreed = new ReadCSVFile("7tpfdata").getData();
         allCowParent = new ArrayList<>();
         data = new ArrayList<>();
-        finding(cowCode);
+//        finding(cowCode);
     }
 
     public void finding(String cowCode){
@@ -79,7 +85,8 @@ public class FindParent {
             if (prevNode != null){
                 JTree tree = new JTree(prevNode);
                 tree.setFont(new Font("",Font.PLAIN,25));
-                tree.setCellRenderer(new TreeCustom());
+                tree.setCellRenderer(new CustomTreeCellRenderer());
+//                new TreeCustom().setColors(tree,prevNode);
 //                frame.add(new JScrollPane(tree));
             }
         }
@@ -93,8 +100,6 @@ public class FindParent {
 //        JScrollPane scrollPane = new JScrollPane(table);
 //
 //        frame.getContentPane().add(scrollPane);
-
-
     }
 
     private void findingParent(Cow cow){
@@ -161,5 +166,21 @@ public class FindParent {
         }
         printParent(cow.getMom());
         printParent(cow.getDad());
+    }
+
+    public ArrayList<String[]> getAllCow() {
+        return allCow;
+    }
+
+    public ArrayList<String[]> getCowParent() {
+        return cowParent;
+    }
+
+    public ArrayList<String[]> getAllCorrectBreeds() {
+        return allCorrectBreeds;
+    }
+
+    public ArrayList<String[]> getAllErrorBreeds() {
+        return allErrorBreeds;
     }
 }
