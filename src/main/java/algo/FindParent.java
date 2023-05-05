@@ -18,24 +18,26 @@ import java.util.ArrayList;
 public class FindParent {
 
     private Cow sourceCow;
-    ArrayList<String[]> allCow;
-    ArrayList<String[]> allMomBreed;
-    ArrayList<String[]> allDadBreed;
+    private final ArrayList<String[]> allCow;
+    private final ArrayList<String[]> allMomBreed;
+    private final ArrayList<String[]> allDadBreed;
 
-    ArrayList<Cow> allCowParent;
+    private final ArrayList<Cow> allCowParent;
 
-    ArrayList<Object[]> data;
+    private final ArrayList<Object[]> data;
+    private final RunDB runDB;
     private final JFrame frame;
 
     public FindParent(String cowCode, JFrame frame){
         this.frame = frame;
-        allCow = new ReadCSVFile("4cow").getData();
+        this.runDB = new RunDB();
+        allCow = runDB.getData("cow");
         allMomBreed = new ReadCSVFile("5breed").getData();
         allDadBreed = new ReadCSVFile("7tpfdata").getData();
         allCowParent = new ArrayList<>();
         data = new ArrayList<>();
 //        finding(cowCode);
-        new RunDB().getData("cow", "WHERE id = \""+cowCode+"\"");
+
     }
 
     public void finding(String cowCode){
@@ -45,44 +47,44 @@ public class FindParent {
             }
         }
 
-//        if (sourceCow != null){
-//            findingParent(sourceCow);
-//
-//
-//            DefaultMutableTreeNode prevNode = null;
-//            for (Cow cow : allCowParent){
-//                if (cow.getMom() != null && cow.getDad() != null){
-//                    DefaultMutableTreeNode node = new DefaultMutableTreeNode(cow.getCowCode());
-//                    DefaultMutableTreeNode momNode = new DefaultMutableTreeNode(cow.getMomCode()+" (MOM)");
-//                    DefaultMutableTreeNode dadNode = new DefaultMutableTreeNode(cow.getDadCode()+" (DAD)");
-//
-//                    if (prevNode != null){
-//                        if (cow.getMomCode().equals(prevNode.getUserObject().toString())){
-//                            prevNode.setUserObject(cow.getMomCode()+" (MOM)");
-//                            node.add(prevNode);
-//                            node.add(dadNode);
-//                        }
-//                        else{
-//                            prevNode.setUserObject(cow.getDadCode()+" (DAD)");
-//                            node.add(momNode);
-//                            node.add(prevNode);
-//                        }
-//                    }
-//                    else{
-//                        node.add(momNode);
-//                        node.add(dadNode);
-//                    }
-//                    prevNode = node;
-//                }
-//            }
-//            if (prevNode != null){
-//                JTree tree = new JTree(prevNode);
-//                tree.setFont(new Font("",Font.PLAIN,25));
-//                tree.setCellRenderer(new TreeCustom());
-////                frame.add(new JScrollPane(tree));
-//            }
-//        }
-//        printParent(sourceCow);
+        if (sourceCow != null){
+            findingParent(sourceCow);
+
+
+            DefaultMutableTreeNode prevNode = null;
+            for (Cow cow : allCowParent){
+                if (cow.getMom() != null && cow.getDad() != null){
+                    DefaultMutableTreeNode node = new DefaultMutableTreeNode(cow.getCowCode());
+                    DefaultMutableTreeNode momNode = new DefaultMutableTreeNode(cow.getMomCode()+" (MOM)");
+                    DefaultMutableTreeNode dadNode = new DefaultMutableTreeNode(cow.getDadCode()+" (DAD)");
+
+                    if (prevNode != null){
+                        if (cow.getMomCode().equals(prevNode.getUserObject().toString())){
+                            prevNode.setUserObject(cow.getMomCode()+" (MOM)");
+                            node.add(prevNode);
+                            node.add(dadNode);
+                        }
+                        else{
+                            prevNode.setUserObject(cow.getDadCode()+" (DAD)");
+                            node.add(momNode);
+                            node.add(prevNode);
+                        }
+                    }
+                    else{
+                        node.add(momNode);
+                        node.add(dadNode);
+                    }
+                    prevNode = node;
+                }
+            }
+            if (prevNode != null){
+                JTree tree = new JTree(prevNode);
+                tree.setFont(new Font("",Font.PLAIN,25));
+                tree.setCellRenderer(new TreeCustom());
+//                frame.add(new JScrollPane(tree));
+            }
+        }
+        printParent(sourceCow);
 //        String[] columnNames = {"Cow", "Mom", "Dad"};
 //        DefaultTableModel tableModel = new DefaultTableModel(data.toArray(new Object[0][0]), columnNames);
 //
@@ -98,13 +100,13 @@ public class FindParent {
 
     private void findingParent(Cow cow){
         if (cow.getMomCode().isEmpty() || cow.getCowCode().equals(cow.getMomCode())){
-            findingMomBreed(cow);
+//            findingMomBreed(cow);
             allCowParent.add(cow);
 //            System.out.println(cow);
             return;
         }
         if (cow.getDadCode().isEmpty() || cow.getCowCode().equals(cow.getDadCode())){
-            findingDadBreed(cow);
+//            findingDadBreed(cow);
             allCowParent.add(cow);
 //            System.out.println(cow);
             return;
