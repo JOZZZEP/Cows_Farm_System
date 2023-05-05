@@ -1,5 +1,7 @@
 package models;
 
+import java.util.ArrayList;
+
 public class Cow {
 
     private String cowCode;
@@ -8,8 +10,9 @@ public class Cow {
 
     private Cow mom;
     private Cow dad;
-
     private Cow child;
+
+    public ArrayList<Breed> breeds;
 
     public Cow(){}
 
@@ -73,6 +76,14 @@ public class Cow {
 
     public void setChild(Cow child) {
         this.child = child;
+    }
+
+    public ArrayList<Breed> getBreeds() {
+        return breeds;
+    }
+
+    public void setBreeds(ArrayList<Breed> breeds) {
+        this.breeds = breeds;
     }
 
     @Override
