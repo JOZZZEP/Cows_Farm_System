@@ -1,5 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4ea9bddb-8d9e-471b-9979-bd2a8c82682c" name="Changes" comment="Add data list">
+      <change afterPath="$PROJECT_DIR$/src/main/java/font/Kanit-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gui/CowsTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gui/Element.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/util/CustomTreeCellRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algo/FindParent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algo/FindParent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/Display.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/RunDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/RunDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/TreeCustom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/TreeCustom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BinaryTreeGUI$Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BinaryTreeGUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/algo/FindParent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/algo/FindParent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/Display.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/Display.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/util/RunDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/util/RunDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/util/TreeCustom.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/util/TreeCustom.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://C:/Program Files/Java/jdk-18.0.2.1/lib/src.zip!/java.desktop/javax/swing/tree/DefaultMutableTreeNode.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/algo/FindParent.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenRunner">
+    <option name="environmentProperties">
+      <map>
+        <entry key="JAVA_TOOL_OPTIONS -Dfile.encoding" value="UTF8" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectId" id="2PCb9ofOVSrAGUpeEnb6ZUsXSAd" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/GitHub/Projects/Cows_Farm_System/src/main/java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Console&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\GitHub\Projects\Cows_Farm_System\src\main\java" />
+      <recent name="F:\GitHub\Projects\Cows_Farm_System\src\main\java\models" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\GitHub\Projects\Cows_Farm_System\src\main\java\font" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="gui" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -11,7 +94,83 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4ea9bddb-8d9e-471b-9979-bd2a8c82682c" name="Changes" comment="" />
+      <created>1682963862431</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1682963862431</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Add Breed">
+      <created>1683053232461</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1683053232461</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add Jtree">
+      <created>1683096902423</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1683096902423</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add name MOM n Dad">
+      <created>1683097192153</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1683097192153</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add jtree n jtable">
+      <created>1683191678382</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1683191678382</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add Breed" />
+    <MESSAGE value="Add Jtree" />
+    <MESSAGE value="Add name MOM n Dad" />
+    <MESSAGE value="Add jtree n jtable" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add jtree n jtable" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
