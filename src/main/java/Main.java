@@ -1,21 +1,18 @@
 import gui.Display;
-import gui.Element;
+import util.Element;
 
 import javax.swing.JFrame;
 import java.awt.Dimension;
 import java.awt.Frame;
-import java.io.IOException;
 
 public class Main {
 
     public static void main(String[] args){
 
-        try {
-            Element.setUIFont(Element.getUIFont(15));
-        } catch (Exception ignored) { }
+        Element.setUIFont(Element.getUIFont(15));
 
         JFrame frame = new JFrame();
-        frame.setTitle("Cow Simulator");
+        frame.setTitle("Cows Simulator");
 
         frame.add(new Display());
 

@@ -2,20 +2,13 @@ package algo;
 
 import models.Breed;
 import models.Cow;
-import util.CustomTreeCellRenderer;
-import util.ReadCSVFile;
+import util.CustomTree;
 import util.RunDB;
-import util.TreeCustom;
 
-import javax.swing.JFrame;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
 import javax.swing.JTree;
-import javax.swing.table.DefaultTableModel;
 import javax.swing.tree.DefaultMutableTreeNode;
 import java.awt.Font;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class FindParent {
 
@@ -85,7 +78,7 @@ public class FindParent {
             if (prevNode != null){
                 JTree tree = new JTree(prevNode);
                 tree.setFont(new Font("",Font.PLAIN,25));
-                tree.setCellRenderer(new CustomTreeCellRenderer());
+                tree.setCellRenderer(new CustomTree());
 //                new TreeCustom().setColors(tree,prevNode);
 //                frame.add(new JScrollPane(tree));
             }
