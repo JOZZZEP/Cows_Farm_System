@@ -1,4 +1,4 @@
-package gui;
+package util;
 
 import javax.swing.UIManager;
 import javax.swing.plaf.FontUIResource;

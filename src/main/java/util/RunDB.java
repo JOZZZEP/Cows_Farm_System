@@ -10,11 +10,34 @@ import java.util.Arrays;
 
 public class RunDB {
 
-    private Connection connection;
+    private static Connection connection;
 
     public RunDB(){}
 
-    public ArrayList<String[]> getCowParent(String cowCode){
+    public static ArrayList<String[]> getAllCows(){
+        ArrayList<String[]> dataList = new ArrayList<>();
+        try {
+            openDatabaseConnection();
+            try(PreparedStatement statement = connection.prepareStatement(
+                    "SELECT * FROM cow")){
+                ResultSet resultSet = statement.executeQuery();
+                int column = statement.getMetaData().getColumnCount();
+                while (resultSet.next()){
+                    String[] data = new String[column];
+                    for (int i=1;i <= column;i++){
+                        data[i-1] = resultSet.getString(i);
+                    }
+                    dataList.add(data);
+                }
+            };
+            closeDatabaseConnection();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return dataList;
+    }
+
+    public static ArrayList<String[]> getCowParent(String cowCode){
         ArrayList<String[]> dataList = new ArrayList<>();
         try {
             openDatabaseConnection();
@@ -48,30 +71,95 @@ public class RunDB {
         return dataList;
     }
 
-    public ArrayList<String[]> getAllCows(){
-        ArrayList<String[]> dataList = new ArrayList<>();
+    public static String[] getCow(String table, String cowCode){
+        String[] data = new String[0];
         try {
             openDatabaseConnection();
             try(PreparedStatement statement = connection.prepareStatement(
-                    "SELECT * FROM cow")){
+                    "SELECT * FROM "+table+" WHERE id = '"+cowCode+"'")){
                 ResultSet resultSet = statement.executeQuery();
                 int column = statement.getMetaData().getColumnCount();
-                while (resultSet.next()){
-                    String[] data = new String[column];
-                    for (int i=1;i <= column;i++){
-                        data[i-1] = resultSet.getString(i);
+                while (resultSet.next()) {
+                    data = new String[column];
+                    for (int i = 1; i <= column; i++) {
+                        data[i - 1] = resultSet.getString(i);
                     }
-                    dataList.add(data);
                 }
             };
             closeDatabaseConnection();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return dataList;
+        return data;
     }
 
-    public ArrayList<String[]> getAllCorrectBreed(){
+    public static String[] getFarmer(String farmerCode){
+        String[] data = new String[0];
+        try {
+            openDatabaseConnection();
+            try(PreparedStatement statement = connection.prepareStatement(
+                    "SELECT * FROM farmer WHERE id = '"+farmerCode+"'")){
+                ResultSet resultSet = statement.executeQuery();
+                int column = statement.getMetaData().getColumnCount();
+                while (resultSet.next()) {
+                    data = new String[column];
+                    for (int i = 1; i <= column; i++) {
+                        data[i - 1] = resultSet.getString(i);
+                    }
+                }
+            };
+            closeDatabaseConnection();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return data;
+    }
+
+    public static String[] getCenter(String centerCode){
+        String[] data = new String[0];
+        try {
+            openDatabaseConnection();
+            try(PreparedStatement statement = connection.prepareStatement(
+                    "SELECT * FROM center WHERE id = '"+centerCode+"'")){
+                ResultSet resultSet = statement.executeQuery();
+                int column = statement.getMetaData().getColumnCount();
+                while (resultSet.next()) {
+                    data = new String[column];
+                    for (int i = 1; i <= column; i++) {
+                        data[i - 1] = resultSet.getString(i);
+                    }
+                }
+            };
+            closeDatabaseConnection();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return data;
+    }
+
+    public static String[] getSector(String sectorCode){
+        String[] data = new String[0];
+        try {
+            openDatabaseConnection();
+            try(PreparedStatement statement = connection.prepareStatement(
+                    "SELECT * FROM sector WHERE id = '"+sectorCode+"'")){
+                ResultSet resultSet = statement.executeQuery();
+                int column = statement.getMetaData().getColumnCount();
+                while (resultSet.next()) {
+                    data = new String[column];
+                    for (int i = 1; i <= column; i++) {
+                        data[i - 1] = resultSet.getString(i);
+                    }
+                }
+            };
+            closeDatabaseConnection();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return data;
+    }
+
+    public static ArrayList<String[]> getAllCorrectBreed(){
         ArrayList<String[]> dataList = new ArrayList<>();
         try {
             openDatabaseConnection();
@@ -98,7 +186,7 @@ public class RunDB {
         return dataList;
     }
 
-    public ArrayList<String[]> getAllErrorBreed(){
+    public static ArrayList<String[]> getAllErrorBreed(){
         ArrayList<String[]> dataList = new ArrayList<>();
         try {
             openDatabaseConnection();
@@ -126,7 +214,7 @@ public class RunDB {
     }
 
 
-    private void openDatabaseConnection() throws SQLException {
+    private static void openDatabaseConnection() throws SQLException {
         System.out.println("Connecting to the database....");
         connection = DriverManager.getConnection(
                 "jdbc:mariadb://localhost:3306/farmdb",
@@ -136,7 +224,7 @@ public class RunDB {
         System.out.println("Connection valid : " + connection.isValid(5)) ;
     }
 
-    private void closeDatabaseConnection() throws SQLException{
+    private static void closeDatabaseConnection() throws SQLException{
         System.out.println("Closing database connection...");
         connection.close();
         System.out.println("Connection valid : "+connection.isValid(5));

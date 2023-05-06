@@ -1,16 +1,13 @@
 package gui;
 
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
-import javax.swing.table.TableColumn;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
@@ -19,10 +16,11 @@ public class CowsTable {
 
     private JPanel allCowsPanel;
     ArrayList<String[]> allData;
-    public CowsTable(ArrayList<String[]> allData, String[] columnNames){
+    public CowsTable(ArrayList<String[]> allData, String[] columnNames, Display display){
         this.allData = allData;
         allCowsPanel = new JPanel();
         allCowsPanel.setLayout(new BorderLayout());
+
         DefaultTableModel tableModel = new DefaultTableModel(allData.toArray(new Object[0][0]), columnNames){
             @Override
             public boolean isCellEditable(int row, int column) {
@@ -39,8 +37,9 @@ public class CowsTable {
             public void mouseClicked(MouseEvent e) {
                 if (e.getClickCount() == 2) {
                     int row = table.rowAtPoint(e.getPoint());
-                    String name = (String) table.getValueAt(row, 0);
-                    JOptionPane.showMessageDialog(null, "Name: " + name);
+                    String name = (String) table.getValueAt(row, table.getColumn("หมายเลขโค").getModelIndex());
+                    new CowDetail(display).setUpCowTreePanel(name);
+                    Display.getCardLayout().show(display, "COW_DETAIL");
                 }
             }
         });
