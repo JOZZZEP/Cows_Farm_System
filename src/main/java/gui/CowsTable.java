@@ -1,5 +1,7 @@
 package gui;
 
+import util.Element;
+
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -27,6 +29,7 @@ public class CowsTable extends JPanel{
         };
 
         JTable table = new JTable(tableModel);
+        table.setFont(Element.getFont(15));
         table.setRowHeight(20);
         table.setRowSelectionAllowed(true);
         table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
@@ -43,6 +46,7 @@ public class CowsTable extends JPanel{
         });
 
         JTableHeader header = table.getTableHeader();
+        header.setFont(Element.getFont(15));
         header.setReorderingAllowed(true);
         header.setResizingAllowed(true);
         header.setBackground(Color.lightGray);

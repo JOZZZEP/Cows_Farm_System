@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ea9bddb-8d9e-471b-9979-bd2a8c82682c" name="Changes" comment="Add cow">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_4_2023_10_42_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_4_2023_10_42_PM__Changes_.xml" afterDir="false" />
+    <list default="true" id="4ea9bddb-8d9e-471b-9979-bd2a8c82682c" name="Changes" comment="hotfix 0.001">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/font/Kanit-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/font/Kanit-Regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/CowsTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/CowsTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/Display.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/Element.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/Element.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +58,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;F:/GitHub/Projects/Cows_Farm_System/src/main/resources/img&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Console&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -127,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683191678382</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="hotfix 0.001">
+      <created>1683474060679</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1683474060679</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -158,7 +170,8 @@
     <MESSAGE value="Add Jtree" />
     <MESSAGE value="Add name MOM n Dad" />
     <MESSAGE value="Add jtree n jtable" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add jtree n jtable" />
+    <MESSAGE value="hotfix 0.001" />
+    <option name="LAST_COMMIT_MESSAGE" value="hotfix 0.001" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

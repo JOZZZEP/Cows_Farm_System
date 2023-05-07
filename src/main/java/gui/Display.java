@@ -27,7 +27,7 @@ public class Display extends JPanel {
         this.setLayout(cardLayout);
 
         JTabbedPane tabbedPane = new JTabbedPane();
-
+        tabbedPane.setFont(Element.getFont(15));
         String[] columnAlLCows = {"เลขเกษตรกร", "หมายเลขโค", "สถานะโค","วันที่", "ชื่อโค", "c_oth", "วันเกิด"
                 , "หมายเลขแม่", "หมายเลขพ่อ", "เพศ", "outfg", "milk", "eurbrd", "eurper"};
         tabbedPane.add("All Cows วัวทั้งหมด ("+decimalFormat(allCow.size())+" รายการ)",

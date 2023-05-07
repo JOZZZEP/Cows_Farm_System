@@ -1,5 +1,4 @@
 import gui.Display;
-import util.Element;
 
 import javax.swing.JFrame;
 import java.awt.Dimension;
@@ -8,8 +7,6 @@ import java.awt.Frame;
 public class Main {
 
     public static void main(String[] args){
-
-        Element.setUIFont(Element.getUIFont(15));
 
         JFrame frame = new JFrame();
         frame.setTitle("Cows Simulator");
