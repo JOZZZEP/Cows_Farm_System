@@ -4,25 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ea9bddb-8d9e-471b-9979-bd2a8c82682c" name="Changes" comment="Add data query">
-      <change afterPath="$PROJECT_DIR$/src/main/java/gui/CowDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/util/CustomTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/Cow60px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/DadCow60px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/MomCow60px.png" afterDir="false" />
+    <list default="true" id="4ea9bddb-8d9e-471b-9979-bd2a8c82682c" name="Changes" comment="Add cows tree and cow detail panel">
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_4_2023_10_42_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_4_2023_10_42_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algo/FindParent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algo/FindParent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/CowDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/CowDetail.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/CowsTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/CowsTable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/Display.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/Element.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/Element.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/CustomTreeCellRenderer.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/util/RunDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/RunDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/TreeCustom.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/algo/FindParent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/algo/FindParent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/util/RunDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/util/RunDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/Display.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/Display.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,15 +53,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "F:/GitHub/Projects/Cows_Farm_System/src/main/resources/img",
-    "settings.editor.selected.configurable": "Console"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/GitHub/Projects/Cows_Farm_System/src/main/resources/img&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Console&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\GitHub\Projects\Cows_Farm_System\src\main\resources\img" />
@@ -98,6 +88,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />

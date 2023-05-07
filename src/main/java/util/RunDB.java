@@ -50,7 +50,9 @@ public class RunDB {
                             " SELECT cow.id, cow.momId, cow.dadId"+
                             " FROM cow"+
                             " JOIN cow_family_tree ON cow_family_tree.momId = cow.id"+
-                            " WHERE cow_family_tree.momId IS NOT NULL)"+
+                            " AND cow_family_tree.dadId = cow.dadId"+
+                            " WHERE cow_family_tree.momId IS NOT NULL"+
+                            " AND cow_family_tree.dadId IS NOT NULL)"+
                     " SELECT id, momId, dadId"+
                     " FROM cow_family_tree")){
                 ResultSet resultSet = statement.executeQuery();
@@ -196,6 +198,56 @@ public class RunDB {
                             " FROM cowbreed"+
                             " GROUP BY cowId"+
                             " HAVING total_percent != 100")){
+                ResultSet resultSet = statement.executeQuery();
+                int column = statement.getMetaData().getColumnCount();
+                while (resultSet.next()){
+                    String[] data = new String[column];
+                    for (int i=1;i <= column;i++){
+                        data[i-1] = resultSet.getString(i);
+                    }
+                    dataList.add(data);
+                }
+            };
+            closeDatabaseConnection();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return dataList;
+    }
+
+    public static ArrayList<String[]> getAllCorrectParent(){
+        ArrayList<String[]> dataList = new ArrayList<>();
+        try {
+            openDatabaseConnection();
+            try(PreparedStatement statement = connection.prepareStatement(
+                    "SELECT * FROM cow" +
+                    " WHERE (momId = '' AND dadId = '')" +
+                    " OR (momId != '' AND dadId != '')")){
+                ResultSet resultSet = statement.executeQuery();
+                int column = statement.getMetaData().getColumnCount();
+                while (resultSet.next()){
+                    String[] data = new String[column];
+                    for (int i=1;i <= column;i++){
+                        data[i-1] = resultSet.getString(i);
+                    }
+                    dataList.add(data);
+                }
+            };
+            closeDatabaseConnection();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return dataList;
+    }
+
+    public static ArrayList<String[]> getAllErrorParent(){
+        ArrayList<String[]> dataList = new ArrayList<>();
+        try {
+            openDatabaseConnection();
+            try(PreparedStatement statement = connection.prepareStatement(
+                    "SELECT * FROM cow" +
+                    " WHERE (momId = '' AND dadId != '')" +
+                    " OR (momId != '' AND dadId = '')")){
                 ResultSet resultSet = statement.executeQuery();
                 int column = statement.getMetaData().getColumnCount();
                 while (resultSet.next()){

@@ -100,21 +100,21 @@ public class CowDetail extends JPanel{
         if (RunDB.getCow("cow",cowCode).length > 0){
             cowDetail = RunDB.getCow("cow",cowCode);
             textArea.append("ข้อมูลวัว\n");
-            textArea.append("หมายเลขโค : "+cowDetail[1]+"\nชื่อโค : "+cowDetail[4]+"\nวันเกิด : "+cowDetail[6]+"\n" +
-                    "สถานะโค : "+cowDetail[2]+"\nรหัสสายพันธุ์ยุโรป : "+cowDetail[12]+"\n%สายพันธุ์ยุโรป : "+cowDetail[13]+"\n\n");
+            textArea.append("\tหมายเลขโค : "+cowDetail[1]+"\n\tชื่อโค : "+cowDetail[4]+"\n\tวันเกิด : "+cowDetail[6]+"\n" +
+                    "\tสถานะโค : "+cowDetail[2]+"\n\tรหัสสายพันธุ์ยุโรป : "+cowDetail[12]+"\n\t%สายพันธุ์ยุโรป : "+cowDetail[13]+"\n\n");
 
             if (RunDB.getCow("cow",cowDetail[7]).length > 0){
                 String[] cowMomDetail = RunDB.getCow("cow",cowDetail[7]);
                 textArea.append("ข้อมูลแม่\n");
-                textArea.append("หมายเลขโค : "+cowMomDetail[1]+"\nชื่อโค : "+cowMomDetail[4]+"\nวันเกิด : "+cowMomDetail[6]+"\n" +
-                        "สถานะโค : "+cowMomDetail[2]+"\nรหัสสายพันธุ์ยุโรป : "+cowMomDetail[12]+"\n%สายพันธุ์ยุโรป : "+cowMomDetail[13]+"\n\n");
+                textArea.append("\tหมายเลขโค : "+cowMomDetail[1]+"\n\tชื่อโค : "+cowMomDetail[4]+"\n\tวันเกิด : "+cowMomDetail[6]+"\n" +
+                        "\tสถานะโค : "+cowMomDetail[2]+"\n\tรหัสสายพันธุ์ยุโรป : "+cowMomDetail[12]+"\n\t%สายพันธุ์ยุโรป : "+cowMomDetail[13]+"\n\n");
             }
 
             if (RunDB.getCow("breeder", cowDetail[8]).length > 0){
                 String[] cowDadDetail = RunDB.getCow("breeder", cowDetail[8]);
                 textArea.append("ข้อมูลพ่อ\n");
-                textArea.append("หมายเลขโค : "+cowDadDetail[0]+"\nชื่อโค : "+cowDadDetail[1]+"\n"+
-                        "หมายเลขพ่อพันธุ์ : "+cowDadDetail[2]+"\nหมายเลขแม่พันธุ์ : "+cowDadDetail[3]+"\n\n");
+                textArea.append("\tหมายเลขโค : "+cowDadDetail[0]+"\n\tชื่อโค : "+cowDadDetail[1]+"\n"+
+                        "\tหมายเลขพ่อพันธุ์ : "+cowDadDetail[2]+"\n\tหมายเลขแม่พันธุ์ : "+cowDadDetail[3]+"\n\n");
             }
 
             if (RunDB.getFarmer(cowDetail[0]).length > 0){
@@ -123,19 +123,18 @@ public class CowDetail extends JPanel{
                 String[] sectorDetail = RunDB.getSector(centerDetail[0]);
 
                 textArea.append("ข้อมูลเกษตรกร\n");
-                textArea.append("หมายเลขสมาชิก : "+farmerDetail[1]+"\nชื่อ : "+farmerDetail[3]+"\nนามสกุล : "+farmerDetail[4]+"\n" +
-                        "วันเกิด : "+farmerDetail[5]+"\nจำนวนโคที่มี : "+farmerDetail[12]+"\n\n");
+                textArea.append("\tหมายเลขสมาชิก : "+farmerDetail[1]+"\n\tชื่อ : "+farmerDetail[3]+"\n\tนามสกุล : "+farmerDetail[4]+"\n" +
+                        "\tวันเกิด : "+farmerDetail[5]+"\n\tจำนวนโคที่มี : "+farmerDetail[12]+"\n\n");
                 textArea.append("ศูนย์/สหกรณ์\n");
-                textArea.append("รหัสศูนย์/สหกรณ์ : "+centerDetail[1]+"\nชื่อศูนย์/สหกรณ์ : "+centerDetail[2]+"\n" +
-                        "ชื่อย่อของศูนย์ : "+centerDetail[3]+"\nภาค : "+sectorDetail[1]+"\n\n");
+                textArea.append("\tรหัสศูนย์/สหกรณ์ : "+centerDetail[1]+"\n\tชื่อศูนย์/สหกรณ์ : "+centerDetail[2]+"\n" +
+                        "\tชื่อย่อของศูนย์ : "+centerDetail[3]+"\n\tภาค : "+sectorDetail[1]+"\n\n");
             }
         }
-
-        if (RunDB.getCow("breeder",cowCode).length > 0){
+        else if (RunDB.getCow("breeder",cowCode).length > 0){
             cowDetail = RunDB.getCow("breeder",cowCode);
             textArea.append("ข้อมูลพ่อพันธุ์\n");
-            textArea.append("หมายเลขโค : "+cowDetail[0]+"\nชื่อโค : "+cowDetail[1]+"\n"+
-                    "หมายเลขพ่อพันธุ์ : "+cowDetail[2]+"\nหมายเลขแม่พันธุ์ : "+cowDetail[3]+"\n\n");
+            textArea.append("\tหมายเลขโค : "+cowDetail[0]+"\n\tชื่อโค : "+cowDetail[1]+"\n"+
+                    "\tหมายเลขพ่อพันธุ์ : "+cowDetail[2]+"\n\tหมายเลขแม่พันธุ์ : "+cowDetail[3]+"\n\n");
         }
 
         textArea.setCaretPosition(0);
