@@ -12,14 +12,12 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
-public class CowsTable {
+public class CowsTable extends JPanel{
 
-    private JPanel allCowsPanel;
     ArrayList<String[]> allData;
     public CowsTable(ArrayList<String[]> allData, String[] columnNames, Display display){
         this.allData = allData;
-        allCowsPanel = new JPanel();
-        allCowsPanel.setLayout(new BorderLayout());
+        this.setLayout(new BorderLayout());
 
         DefaultTableModel tableModel = new DefaultTableModel(allData.toArray(new Object[0][0]), columnNames){
             @Override
@@ -54,11 +52,6 @@ public class CowsTable {
         scrollPane.setPreferredSize(new Dimension(1366, 768));
         scrollPane.getVerticalScrollBar().setUnitIncrement(100);
 
-        allCowsPanel.add(scrollPane);
+        this.add(scrollPane);
     }
-
-    public JPanel getAllCowsPanel() {
-        return allCowsPanel;
-    }
-
 }
